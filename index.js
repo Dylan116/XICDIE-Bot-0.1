@@ -428,7 +428,7 @@ async function handleButton(interaction) {
       updateApplicationStatus(appId, 'approved', app.logMessageId, app.logChannelId);
       try {
         const user = await interaction.client.users.fetch(app.applicantId);
-        await user.send({ embeds: [new EmbedBuilder().setColor(0x57f287).setTitle('✅ ใบสมัครของคุณได้รับการอนุมัติ!').setDescription(`ยินดีต้อนรับเข้า ✗iCDIE`).setTimestamp()] });
+        await user.send({ embeds: [new EmbedBuilder().setColor(0x57f287).setTitle('✅ ใบสมัครของคุณได้รับการอนุมัติ!').setDescription(`ยินดีต้อนรับเข้า ✗iCNIE`).setTimestamp()] });
       } catch {}
       const approvedEmbed = new EmbedBuilder().setColor(0x57f287).setTitle('✅ อนุมัติแล้ว').setDescription(`อนุมัติโดย <@${interaction.user.id}>`).setTimestamp();
       const doneRow = new ActionRowBuilder().addComponents(
