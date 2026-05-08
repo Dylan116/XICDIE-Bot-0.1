@@ -282,7 +282,7 @@ function buildApplicationModal(p) {
   const modal  = new ModalBuilder().setCustomId(`modal_apply:${p.guildId}:${p.name}`).setTitle(p.embedTitle || 'ใบสมัคร');
   for (let i = 0; i < count; i++) {
     const label = labels[i] || `ข้อมูลที่ ${i+1}`;
-    const inp   = new TextInputBuilder().setCustomId(`answer_${i}`).setLabel(label).setStyle(TextInputStyle.Paragraph).setRequired(true);
+    const inp   = new TextInputBuilder().setCustomId(`answer_${i}`).setLabel(label).setStyle(TextInputStyle.Short).setRequired(true);
     modal.addComponents(new ActionRowBuilder().addComponents(inp));
   }
   return modal;
