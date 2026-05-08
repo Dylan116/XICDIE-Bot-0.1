@@ -428,7 +428,7 @@ async function handleButton(interaction) {
       updateApplicationStatus(appId, 'approved', app.logMessageId, app.logChannelId);
       try {
         const user = await interaction.client.users.fetch(app.applicantId);
-        await user.send({ embeds: [new EmbedBuilder().setColor(0x57f287).setTitle('✅ ใบสมัครของคุณได้รับการอนุมัติ!').setDescription(`โปรเจกต์: **${app.projectName}**\nยินดีต้อนรับเข้าสู่ทีม!`).setTimestamp()] });
+        await user.send({ embeds: [new EmbedBuilder().setColor(0x57f287).setTitle('✅ ใบสมัครของคุณได้รับการอนุมัติ!').setDescription(`ยินดีต้อนรับเข้า ✗iCDIE`).setTimestamp()] });
       } catch {}
       const approvedEmbed = new EmbedBuilder().setColor(0x57f287).setTitle('✅ อนุมัติแล้ว').setDescription(`อนุมัติโดย <@${interaction.user.id}>`).setTimestamp();
       const doneRow = new ActionRowBuilder().addComponents(
@@ -591,7 +591,7 @@ async function handleModal(interaction) {
       updateApplicationStatus(appId, 'rejected', app.logMessageId, app.logChannelId);
       try {
         const user = await interaction.client.users.fetch(app.applicantId);
-        await user.send({ embeds: [new EmbedBuilder().setColor(0xed4245).setTitle('❌ ใบสมัครของคุณถูกปฏิเสธ').setDescription(`โปรเจกต์: **${app.projectName}**\n\n**สาเหตุ:** ${reason}`).setTimestamp()] });
+        await user.send({ embeds: [new EmbedBuilder().setColor(0xed4245).setTitle('❌ ใบสมัครของคุณถูกปฏิเสธ').setDescription(`**สาเหตุ:** ${reason}`).setTimestamp()] });
       } catch {}
       if (app.logMessageId && app.logChannelId) {
         try {
